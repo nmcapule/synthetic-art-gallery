@@ -26,7 +26,8 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "^4.7.0"
+    "@stencil/core": "^4.7.0",
+    "pixi.js": "^7.3.3"
   },
   "devDependencies": {
     "@types/jest": "^29.5.6",

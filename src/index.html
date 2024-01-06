@@ -3,12 +3,31 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+    <title>nmcapule's Synthetic Art Gallery</title>
 
     <script type="module" src="/build/synthetic-art-gallery.esm.js"></script>
     <script nomodule src="/build/synthetic-art-gallery.js"></script>
+
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+
+        background-color: #e5e5f7;
+        opacity: 0.8;
+        background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+        background-size: 10px 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <gallery-item>
+      <flow-fields />
+    </gallery-item>
   </body>
 </html>

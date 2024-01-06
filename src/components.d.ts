@@ -6,6 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface FlowFields {
+    }
+    interface GalleryItem {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +26,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLFlowFieldsElement extends Components.FlowFields, HTMLStencilElement {
+    }
+    var HTMLFlowFieldsElement: {
+        prototype: HTMLFlowFieldsElement;
+        new (): HTMLFlowFieldsElement;
+    };
+    interface HTMLGalleryItemElement extends Components.GalleryItem, HTMLStencilElement {
+    }
+    var HTMLGalleryItemElement: {
+        prototype: HTMLGalleryItemElement;
+        new (): HTMLGalleryItemElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +45,16 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "flow-fields": HTMLFlowFieldsElement;
+        "gallery-item": HTMLGalleryItemElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface FlowFields {
+    }
+    interface GalleryItem {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +70,8 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "flow-fields": FlowFields;
+        "gallery-item": GalleryItem;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +79,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "flow-fields": LocalJSX.FlowFields & JSXBase.HTMLAttributes<HTMLFlowFieldsElement>;
+            "gallery-item": LocalJSX.GalleryItem & JSXBase.HTMLAttributes<HTMLGalleryItemElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
